@@ -6,33 +6,33 @@
         <meta name="viewport" content="minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="include/main.css" />-
+		<link rel="stylesheet" href="include/main.css" />
 		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Nixie+One" rel="stylesheet">
 		
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
 		<script type="text/javascript" src="src/app.js"></script>
 		
     </head>
 	<body id="app" ng-cloak ng-app="app" ng-controller="mainController as ctrl">
       <div class="container-fluid row maxed">
           <h1>The Name Calculator</h1>
-			
-          <!-- TODO -->
-			<div class="card col-md-12">
-				<h2>Add a New Name</h2>
-				
-				<form ng-submit="ctrl.addName()">
-				   <input type="text" ng-model="ctrl.newName" placeholder="name" />
-				   <input type="submit" value="Add Name" class="btn"/>
-				</form>
-				<h2>Import Names</h2>
-				<form ng-submit="ctrl.addJSONNames()">
-					<input type="submit" value="Get All Names" class="btn" />
-				</form>
+			<div class="card row">
+				<div class="col-sm-6 col-xs-12">
+					<h2>Add a New Name</h2>
+					<form ng-submit="ctrl.addNameFromInput()">
+					   <input type="text" ng-model="ctrl.newName" placeholder="new name"/>
+					   <input type="submit" value="Add Name" class="btn" ng-disabled="!ctrl.newName" />
+					</form>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<h2>Import Names</h2>
+					<form ng-submit="ctrl.addNamesFromJSON()">
+						<input type="submit" value="Load All" class="btn" />
+					</form>
+				</div>
 			</div>
-			<div class="card col-md-12"  ng-show="ctrl.names.length">
+			<div class="card results"  ng-show="ctrl.names.length">
 				<h2>Names/Values</h2>
 				<div class="totalValue" ng-show="ctrl.names.length > 10">Total Value: {{ctrl.totalVal}}</div>
 				<table>
@@ -40,7 +40,7 @@
 						<th>#</th><th>name</th><th><th>value</th>
 					</tr>
 					<tr ng-repeat="name in ctrl.names">
-						<td>{{$index +1}}</td><td>{{name.name}}</td><td><td>{{name.val}}</td>
+						<td>{{ctrl.commanate($index +1)}}</td><td>{{name.name}}</td><td><td>{{ctrl.commanate(name.multipliedVal)}}</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="totalValue" >Total Value: {{ctrl.totalVal}}</td>

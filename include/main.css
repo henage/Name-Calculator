@@ -30,18 +30,6 @@ body {
 	max-width: 800px;
 	margin: 5px auto;
 }
-
-H2, H3, H4, H5 {
-	color: #4a53c8;
-	font-size: 2em;
-	margin: 2px 0px 6px 0px;
-	padding-top: 0;
-	font-family: 'Nixie One', cursive;
-	text-align: center;
-	text-shadow: 0px 2px 3px rgba(0,0,0,0.1),
-                 1px 3px 3px rgba(0,0,0,0.05),
-                 -1px 3px 3px rgba(0,0,0,0.05);
-}
 H1 {
 	font-family: 'Nixie One', cursive;
 	color: #FFFFFF;
@@ -52,6 +40,17 @@ H1 {
 	text-shadow: 0px 3px 3px rgba(0,0,0,0.2),
                  2px 5px 3px rgba(0,0,0,0.1),
                  -2px 5px 3px rgba(0,0,0,0.1);
+}
+H2 {
+	color: #4a53c8;
+	font-size: 2em;
+	margin: 2px 0px 6px 0px;
+	padding-top: 0;
+	font-family: 'Nixie One', cursive;
+	text-align: center;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.1),
+                 1px 2px 1px rgba(0,0,0,0.05),
+                 -1px 2px 1px rgba(0,0,0,0.05);
 }
 a {
 	color: #29BF89;
@@ -66,7 +65,20 @@ a:hover {
 	background-color: #FFF;
 	color: #7E8D85;
 	padding: 8px 12px;
-	margin-bottom: 12px;
+	margin: 0 0 12px 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+form {
+	text-align: center;
+}
+input[type=text] {
+	width: 180px;
+	text-align: center;
+	font-size: 1.3em;
+	padding: 6px 2px;
+	border-radius: 6px;
+	transform: translate(0,3px);
 }
 #app .btn {
 	background-color: #29BF89;
@@ -83,22 +95,35 @@ a:hover {
 #app .btn:hover {
 	background-color: #0083BB;
 }
-
+#app .btn[disabled=disabled] {
+	color: #7E8D85;
+	background-color: #BDBDBE;
+	border: #7E8D85 solid 1px;
+	cursor: not-allowed;
+}
 
 .ng-hide-remove, .ng-hide {
 	opacity: 0;
 }
-tr:nth-child(odd) td {
-	background: #CDCDCE;
-	color: #000;
-}
+
 table {
 	width: 100%;
 	max-width:800px;
 	margin: 0px auto;
 }
-form {
-	text-align: center;
+tr:nth-child(odd) td {
+	background: #CDCDCE;
+	color: #000;
+}
+td {
+	padding: 4px;
+}
+#app tr th{
+	background-color: #0083BB;
+	color: #FFF;
+	font-weight: bold;
+	padding: 4px;
+	font-size: 1.5em;
 }
 #app .totalValue {
 	font-weight: bold;
@@ -106,11 +131,4 @@ form {
 	background-color: #FFF;
 	color: #7E8D85;
 	text-align: center;
-}
-#app tr th{
-	background-color: #0083BB;
-	color: #FFF;
-	font-weight: bold;
-	padding: 4px 0px;
-	font-size: 1.5em;
 }
