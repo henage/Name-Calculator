@@ -1,0 +1,116 @@
+/* general -------------*/
+/*
+font-family: 'Nixie One', cursive;
+font-family: 'Libre Baskerville', serif;
+
+#7E8D85 dark grey
+#29BF89 green
+#0083BB blue
+#4a53c8 dark blue
+#BDBDBE light grey
+#FFFFFF white
+
+
+
+*/
+html {
+	height: 100%;
+}
+body {
+	background: linear-gradient(#29BF89, #0083BB);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	color: #edf9ff;
+	font-family: 'Libre Baskerville', serif;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+}
+.maxed {
+	max-width: 800px;
+	margin: 5px auto;
+}
+
+H2, H3, H4, H5 {
+	color: #4a53c8;
+	font-size: 2em;
+	margin: 2px 0px 6px 0px;
+	padding-top: 0;
+	font-family: 'Nixie One', cursive;
+	text-align: center;
+	text-shadow: 0px 2px 3px rgba(0,0,0,0.1),
+                 1px 3px 3px rgba(0,0,0,0.05),
+                 -1px 3px 3px rgba(0,0,0,0.05);
+}
+H1 {
+	font-family: 'Nixie One', cursive;
+	color: #FFFFFF;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin-top: 4px;
+	text-align: center;
+	text-shadow: 0px 3px 3px rgba(0,0,0,0.2),
+                 2px 5px 3px rgba(0,0,0,0.1),
+                 -2px 5px 3px rgba(0,0,0,0.1);
+}
+a {
+	color: #29BF89;
+	font-weight: bold;
+}
+a:hover {
+	color: #0083BB;
+	
+}
+.card {
+	border-radius: 4px;
+	background-color: #FFF;
+	color: #7E8D85;
+	padding: 8px 12px;
+	margin-bottom: 12px;
+}
+#app .btn {
+	background-color: #29BF89;
+	color: #FFF;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin:	4px;
+	transition: background-color .5s;
+	border: #000 solid 1px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 4px 8px;
+}
+#app .btn:hover {
+	background-color: #0083BB;
+}
+
+
+.ng-hide-remove, .ng-hide {
+	opacity: 0;
+}
+tr:nth-child(odd) td {
+	background: #CDCDCE;
+	color: #000;
+}
+table {
+	width: 100%;
+	max-width:800px;
+	margin: 0px auto;
+}
+form {
+	text-align: center;
+}
+#app .totalValue {
+	font-weight: bold;
+	font-size: 1.5em;
+	background-color: #FFF;
+	color: #7E8D85;
+	text-align: center;
+}
+#app tr th{
+	background-color: #0083BB;
+	color: #FFF;
+	font-weight: bold;
+	padding: 4px 0px;
+	font-size: 1.5em;
+}
